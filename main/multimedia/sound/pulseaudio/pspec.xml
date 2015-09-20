@@ -15,7 +15,8 @@
         <IsA>library</IsA>
         <Summary>A networked sound server with an advanced plugin system</Summary>
         <Description>pulseaudio is a sound server for POSIX and Win32 systems. It allows you to do advanced operations on your sound data as it passes between your application and your hardware.</Description>
-             <Archive sha1sum="3607d523fb270d9b68463de30f5d9e17957f1088" type="tarxz">http://freedesktop.org/software/pulseaudio/releases/pulseaudio-6.0.tar.xz</Archive>
+             <Archive sha1sum="7a97e3ef6f6cce3567f536d46e516ace8fc0e8f2" type="tarxz">http://freedesktop.org/software/pulseaudio/releases/pulseaudio-6.99.2.tar.xz</Archive>
+	    
         <BuildDependencies>
             <Dependency>orc-devel</Dependency>
             <Dependency>sbc-devel</Dependency>
@@ -66,12 +67,13 @@
             <Path fileType="library">/usr/lib/libpulse.so*</Path>
             <Path fileType="library">/usr/lib/libpulse-simple.so</Path>
             <Path fileType="library">/usr/lib/libpulse-simple.so*</Path>
-            <Path fileType="library">/usr/lib/pulseaudio/libpulsecommon-*</Path>
+            <Path fileType="library">/usr/lib/pulseaudio/libpulsecommon-6.99.so</Path>
             <Path fileType="library">/usr/lib/libpulse-mainloop-glib.so</Path>
             <Path fileType="library">/usr/lib/libpulse-mainloop-glib.so*</Path>
             <Path fileType="library">/usr/lib/pulseaudio/libpulsedsp.*</Path>
 	    <Path fileType="library">/usr/lib/pulse/modules</Path>
 	    <Path fileType="library">/usr/lib/udev/rules.d</Path>
+	     
         </Files>
     </Package>
 
@@ -87,6 +89,7 @@
             <Path fileType="data">/usr/lib32/pkgconfig</Path>
             <Path fileType="data">/usr/share/vala/vapi</Path>
             <Path fileType="data">/usr/lib/cmake/PulseAudio</Path>
+	     <Path fileType="library">/usr/libx32/pulseaudio/libpulsecommon-6.99.la</Path>
         </Files>
     </Package>
     <Package>
@@ -124,6 +127,7 @@
             <Path fileType="data">/usr/share/icons</Path>
             <Path fileType="data">/var/lib/pulse</Path>
             <Path fileType="data">/run/pulse</Path>
+	    
         </Files>
         <AdditionalFiles>
             <AdditionalFile owner="root" permission="0644" target="/usr/lib/tmpfiles.d/pulseaudio.conf">pulseaudio.conf</AdditionalFile>
@@ -191,10 +195,18 @@
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib32</Path>
+	   
         </Files>
     </Package>
 
     <History>
+      <Update release="9">
+            <Date>2015-09-20</Date>
+            <Version>6.99</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ali Algul</Name>
+            <Email>alialgul@pisilinux.org</Email>
+        </Update>
         <Update release="8">
             <Date>2015-02-20</Date>
             <Version>6.0</Version>
